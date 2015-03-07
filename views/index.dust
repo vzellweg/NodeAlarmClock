@@ -1,0 +1,40 @@
+{>"layouts/main"/}
+
+{<container}
+    <p>Victor's Clock:</p>
+    <div id="clock" class="large-bold"></div>
+    
+    <div id='forecastLabel'></div>
+    
+    <img id='forecastIcon'>
+
+    <div id="alarmContainer" class="flexible">
+      <div id="alarmHeader">
+         <h2>Alarms</h2>
+         <div id="user-id" class="collapse">
+            
+          </div>
+         <button id="addAlarm" type="button" value="Add Alarm" class="button">Add Alarm</button>
+         <button id='deleteAlarm' type="button" value="Delete Alarm" class="button">Delete Alarm</button>
+         <!-- Container with the Sign-In button. -->
+        <div id="gConnect" class="button">
+          <button class="g-signin"
+              data-scope="email"
+              data-clientid="863175916633-aj79f8nfu9qc3btp0ecnh0kbp0uhbanm.apps.googleusercontent.com"
+              data-callback="onSignInCallback"
+              data-theme="dark"
+              data-cookiepolicy="single_host_origin">
+          </button>
+          <!-- Textarea for outputting data -->
+          
+        </div>      
+      </div>
+          
+      <div id="alarms">
+        <div id="no-alarms"><h2>No Alarms Added</h2></div>
+        <ul id="selectable"></ul>
+      </div>
+
+    </div>
+
+{/container}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 8 - vellweg</title>
+
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/alarm.css" rel="stylesheet">
+    <!--  jQueryUI UI-lightness CDN -->
+    <link href="https://code.jquery.com/ui/1.11.2/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <script src="http://www.parsecdn.com/js/parse-1.3.4.min.js"></script>
+    <script src = "https://plus.google.com/js/client:plusone.js"></script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-60153408-1', 'auto');
+  ga('send', 'pageview');
+  
+</script>
+
+  <script src="//cdn.optimizely.com/js/2557330004.js"></script>
+
+</head>
+
+<body class='chilly'>
+    <p>Victor's Clock:</p>
+    <div id="clock" class="large-bold"></div>
+    
+    <div id='forecastLabel'></div>
+    
+    <img id='forecastIcon'>
+
+    <div id="alarmContainer" class="flexible">
+      <div id="alarmHeader">
+         <h2>Alarms</h2>
+         <div id="user-id" class="collapse">
+            
+          </div>
+         <button id="addAlarm" type="button" value="Add Alarm" class="button">Add Alarm</button>
+         <button id='deleteAlarm' type="button" value="Delete Alarm" class="button">Delete Alarm</button>
+         <!-- Container with the Sign-In button. -->
+        <div id="gConnect" class="button">
+          <button class="g-signin"
+              data-scope="email"
+              data-clientid="863175916633-aj79f8nfu9qc3btp0ecnh0kbp0uhbanm.apps.googleusercontent.com"
+              data-callback="onSignInCallback"
+              data-theme="dark"
+              data-cookiepolicy="single_host_origin">
+          </button>
+          <!-- Textarea for outputting data -->
+          
+        </div>      
+      </div>
+          
+      <div id="alarms">
+        <div id="no-alarms"><h2>No Alarms Added</h2></div>
+        <ul id="selectable"></ul>
+      </div>
+
+    </div>
+    <div id="mask" class="hide"></div>
+
+    <div id="popup" class="hide">
+       <h2>Add Alarm</h2>
+       <div id="timeContainer">
+           <select id="hours">
+               <option>01</option>
+               <option>02</option>
+               <option>03</option>
+               <option>04</option>
+               <option>05</option>
+               <option>06</option>
+               <option>07</option>
+               <option>08</option>
+               <option>09</option>
+               <option>10</option>
+               <option>11</option>
+               <option>12</option>
+           </select>
+           <select id="mins">
+               <option>00</option>
+               <option>15</option>
+               <option>30</option>
+               <option>45</option>
+           </select>
+           <select id="ampm">
+               <option>am</option>
+               <option>pm</option>
+           </select>
+       </div>
+       <input type="text" id="alarmName" placeholder="Alarm Name" />      
+       <div class="flexable">
+           <input id="hideAlarm" type="button" value="Cancel" class="button"/>
+           <input id="saveAlarm" type="button" value="Save Alarm" class="button"/>
+       </div>
+   </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!--  jQueryUI 1.11.2 CDN minified -->
+    <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
+    
+    <script type="text/javascript" src="js/alarm.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    
+
+</body>
+
+</html>
