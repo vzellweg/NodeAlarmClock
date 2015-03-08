@@ -24,7 +24,7 @@ function deleteAlarm () {
    var userField = $('#user-id').text().trim();
    
    console.log('userField: ' + userField);
-   if (alarmDOM && !userField) {
+   if (alarmDOM && userField.indexOf("Guest's Alarms") > -1) {
       console.log('removing signed-off alarm');
       alarmDOM.detach();
       ga('send', 'event', 'Alarm', 'Delete');
@@ -109,7 +109,7 @@ function addAlarm () {
 
    var time = hours + ':' + mins + ':' + ampm;
    var userField = $('#user-id').text();
-   var userId = userField ? userField.split(' ')[1] : null;
+   var userId = userField.indexOf("Guest's Alarms") == -1 ? userField.split("/ 's/")[0] : null;
 
    var AlarmObject = Parse.Object.extend("Alarm");
    var alarmObject = new AlarmObject();
@@ -142,9 +142,11 @@ function addAlarm () {
 function getAllAlarms (userId) {
    Parse.initialize("rnjXHYtI61sJUWgVmpU04DW9YIzGS8jfOD6StWbz", "pV0BlDH2m6kSpDhTheYYEoSMRxZ4OoHoaUy55bva");
    var AlarmObject = Parse.Object.extend("Alarm");
-    var query = new Parse.Query(AlarmObject);
+   var query = new Parse.Query(AlarmObject);
+   var userField = $('#user-id').text();
+   var userId = userField.indexOf("Guest's Alarms") == -1 ? userField.split("/ 's/")[0] : null;
 
-    query.equalTo("createdBy", userId);
+   query.equalTo("createdBy", userId);
 
     query.find({
         success: function(results) {

@@ -14,7 +14,10 @@
     "dustjs-helpers": "^1.6.0",
     "dustjs-linkedin": "^2.6.0",
     "express": "~4.11.1",
+    "express-session": "^1.10.3",
     "morgan": "~1.5.1",
+    "passport": "^0.2.1",
+    "passport-imgur": "0.0.2",
     "serve-favicon": "~2.2.0"
   }
 }

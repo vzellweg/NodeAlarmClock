@@ -7,6 +7,7 @@ $(document).ready(function()
       $('#hideAlarm').button().click(hideAlarmPopup);
       $('#saveAlarm').button().click(addAlarm);
       $('#selectable').selectable();
+      getAllAlarms();
    });
 
 function getTime() {
@@ -102,20 +103,6 @@ function showLocationError(error) {
 }
 
 /**
-* Handler for the signin callback triggered after the user selects an account.
-*/
-function onSignInCallback(resp) {
-   gapi.client.load('plus', 'v1', apiClientLoaded);
-}
-
-/**
-* Sets up an API call after the Google API client loads.
-*/
-function apiClientLoaded() {
-   gapi.client.plus.people.get({userId: 'me'}).execute(handleEmailResponse);
-}
-
-/**
 * Response callback for when the API client receives a response.
 *
 * @param resp The API response object with the user email and profile information.
@@ -138,17 +125,4 @@ function handleEmailResponse(resp) {
    $('#user-id').show();
    
    getAllAlarms(primaryEmail);
-}
-
-/* Log user out of this app. */
-function onSignOutCallback() {
-   $('#user-id').empty();
-   $('#user-id').hide();
-   /*$('#addAlarm').show();
-   $('#deleteAlarm').show();
-   */
-
-   $('#selectable').hide();
-   getAllAlarms(null);
-
 }

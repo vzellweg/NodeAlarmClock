@@ -12,6 +12,11 @@ router.get('/', function(req, res, next) {
          {javascript: 'index.js'},
          {javascript: 'alarm.js'}]
    }
+   var sesh = req.session;
+   var userName = sesh.passport.user ? sesh.passport.user.id : 'Guest';
+
+   dustVars.userName = userName;
+   dustVars.loggedIn = sesh.passport.user ? true : false;
    res.render('index', dustVars);
 });
 
